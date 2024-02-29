@@ -15,7 +15,9 @@ This will show all open ports on network.
 
 Result
 
-![Screenshot from 2024-02-25 16-44-35](https://github.com/arman-0201/Network-Scanner/assets/145873155/12b3c875-893c-40a8-8b08-7f0e867614a2)
+![Screenshot from 2024-02-29 21-13-11](https://github.com/arman-0201/Network-Scanner/assets/145873155/8bd2655a-c37d-402d-856b-9190f63b0c5e)
+
+
 
 
 
