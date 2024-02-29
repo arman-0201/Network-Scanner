@@ -1,24 +1,13 @@
-#!/bin/bash
+import socket
+import sys
 
-ip=$1
-
-if [ -z "$ip" ]; then
-    echo "Usage: $0 <IP_ADDRESS>"
-    exit 1
-fi
-
-echo "Checking host $ip..."
-
-if ping -c 1 -W 1 "$ip" &> /dev/null; then
-    echo "Host $ip is up."
-    echo "Checking for open ports on $ip..."
-    if nc -zvw1 "$ip" 1-65535 &> /dev/null; then
-        echo "Host $ip is up, with open ports:"
-        nc -zvw1 "$ip" 1-65535 2>&1 | grep succeeded
-    else
-        echo "Host $ip is up, but no open ports found."
-    fi
-else
-    echo "Host $ip is down."
-fi
-
+ip = sys.argv[1]
+for port in range(65535):
+    try:
+        serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        serv.settimeout(1)  
+        serv.connect((ip, port))  
+        print('[OPEN] Port open:', port)
+        serv.close()  
+    except socket.error:
+        pass
