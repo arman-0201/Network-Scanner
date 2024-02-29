@@ -3,10 +3,11 @@
 This code will scan network open ports.
 
 ```
+sudo apt install python3
+pip install socket
 sudo apt install git
 git clone https://github.com/arman-0201/Network-Scanner.git
-chmod +x NetScan.sh
-./NetScan.sh 192.168.1
+./NetScan.py 192.168.1.1
 
 ```
 
